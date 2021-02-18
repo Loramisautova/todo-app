@@ -12,7 +12,7 @@ const styles = {
         textAlign: "center",
         width: 500
     }, 
-  };
+};
 
 export function MainPage () {
     const [todos, setTodos] = useState([]);
