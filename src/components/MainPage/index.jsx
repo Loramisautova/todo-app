@@ -8,9 +8,6 @@ import { TodoList }  from '../TodoList';
 const styles = {
     layout: {
         padding: 20,
-        margin: "auto",
-        textAlign: "center",
-        width: 500
     }, 
 };
 
@@ -43,15 +40,19 @@ export function MainPage () {
     }
 
     return (
-        <Grid container spacing={0} style={styles.layout}>
-            <Grid item xs={12}>
-                <TextPanel onChange={handleChange} />
+        <>
+        <Grid container justify="center" style={styles.layout}>
+            <Grid item md={8} lg={6} xs={12}>
+                <TextPanel onSubmit={handleChange} />
             </Grid>
-            <Grid item xs={12}>
+        </Grid>
+        <Grid container justify="center">
+        <Grid item item md={8} lg={6} xs={12}>
                 {todos.length > 0 && 
-                    <TodoList todos={todos} deleteTodo={handleDelete} toggle={handleToggle} />
+                    <TodoList todos={todos} onDelete={handleDelete} onToggle={handleToggle} />
                 }
             </Grid>
         </Grid>
+        </>
     );
 }

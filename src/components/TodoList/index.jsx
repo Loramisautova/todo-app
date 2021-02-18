@@ -33,7 +33,7 @@ const styles = {
 };
   
 export function TodoList(props) {
-    const { todos, toggle } = props;
+    const { todos, onToggle } = props;
 
     return(
         <Card style={styles.card}>
@@ -43,7 +43,7 @@ export function TodoList(props) {
                     <FormControlLabel
                         control={
                         <Checkbox
-                            onChange={() => toggle(todo.id)}
+                            onChange={() => onToggle(todo.id)}
                             checked={todo.isChecked}
                             color="primary"
                         />
@@ -53,7 +53,7 @@ export function TodoList(props) {
                     />
                         <IconButton
                             aria-label="delete"
-                            onClick={() => props.deleteTodo(todo.id)}
+                            onClick={() => props.onDelete(todo.id)}
                         >
                         <DeleteIcon />
                     </IconButton>

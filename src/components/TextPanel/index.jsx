@@ -18,7 +18,7 @@ export function TextPanel (props) {
     };
 
     const handleSubmit = () => {
-        props.onChange(value);
+        props.onSubmit(value);
         setValue('');
     };  
 
@@ -29,7 +29,7 @@ export function TextPanel (props) {
                 label="Task" 
                 value={value} 
                 onChange={onChange} 
-                style={{ width: "100%" }}
+                fullWidth
             />
             <Button 
                 type="submit"
