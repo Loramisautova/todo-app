@@ -6,9 +6,12 @@ import { TextPanel }  from '../TextPanel';
 import { TodoList }  from '../TodoList';
 
 const styles = {
-    layout: {
-        padding: 20,
+    textPanel: {
+        padding: "20px",
     }, 
+    todoList: {
+        padding: "0px 20px"
+    }
 };
 
 export function MainPage () {
@@ -37,22 +40,22 @@ export function MainPage () {
             return todo;
           });
         setTodos(newTodos);
-    }
+    };
 
     return (
         <>
-        <Grid container justify="center" style={styles.layout}>
-            <Grid item md={8} lg={6} xs={12}>
-                <TextPanel onSubmit={handleChange} />
+            <Grid container justify="center" style={styles.textPanel}>
+                <Grid item md={8} lg={6} xs={12}>
+                    <TextPanel onSubmit={handleChange} />
+                </Grid>
             </Grid>
-        </Grid>
-        <Grid container justify="center">
-        <Grid item item md={8} lg={6} xs={12}>
-                {todos.length > 0 && 
-                    <TodoList todos={todos} onDelete={handleDelete} onToggle={handleToggle} />
-                }
+            <Grid container justify="center" style={styles.todoList}>
+                <Grid item item md={8} lg={6} xs={12}>
+                    {todos.length > 0 && 
+                        <TodoList todos={todos} onDelete={handleDelete} onToggle={handleToggle} />
+                    }
+                </Grid>
             </Grid>
-        </Grid>
         </>
     );
 }

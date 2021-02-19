@@ -1,14 +1,5 @@
 import React, { useState } from 'react';
-import { Grid, TextField, Button } from "@material-ui/core";
-
-const styles = {
-    header: {
-        justifyContent: "center",
-        display: "flex",
-        flexDirection: "row",
-        alignItems: "center",
-    },
-  };
+import { Box, TextField, Button } from "@material-ui/core";
 
 export function TextPanel (props) {
     const [value, setValue] = useState('');
@@ -23,7 +14,7 @@ export function TextPanel (props) {
     };  
 
     return (
-        <Grid style={styles.header}>
+        <Box display="flex" flexDirection="row" justifyContent="center" alignItems="center">
            <TextField 
                 id="standard-basic" 
                 label="Task" 
@@ -39,6 +30,6 @@ export function TextPanel (props) {
             >
                 Add
             </Button>
-        </Grid>
+        </Box>
     );  
 }
